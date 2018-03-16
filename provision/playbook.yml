@@ -36,6 +36,15 @@
         dest: /etc/init.d
         mode: 0755
 
+    - name: Install package "g++"
+      apt:
+        name: g++
+        state: present
+
+    - name: Install package "libasound2-dev"
+      apt:
+        name: libasound2-dev
+        state: present
 
     - name: Enable and start jupyter notebook service
       service:

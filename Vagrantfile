@@ -17,6 +17,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.box = "ubuntu/trusty64"
 
+
   # You might have to play around with the following two lines if you have to install
   # the virtual mashine on a flash or usb-flash drive.
   # See https://github.com/rreben/Mining-the-Social-Web-2nd-Edition for details.
@@ -35,6 +36,7 @@ Vagrant.configure("2") do |config|
     # You can increase the default amount of memory used by your VM by
     # adjusting this value below (in MB) and reprovisioning.
     vb.customize ["modifyvm", :id, "--memory", "1024"]
+    vb.name = "magenta_machine"
   end
 
   # Ansible provisioning - 
