@@ -17,4 +17,5 @@ futures
 bokeh>=0.12.0
 Pillow>=3.4.2
 IPython
+git+https://github.com/vishnubob/python-midi@feature/python3
 magenta

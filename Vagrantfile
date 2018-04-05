@@ -26,6 +26,8 @@ Vagrant.configure("2") do |config|
 
   # jupyter Notebook
   config.vm.synced_folder "notebooks/", "/home/vagrant/notebooks"
+  config.vm.synced_folder "corpora/", "/home/vagrant/corpora"
+  config.vm.synced_folder "results/", "/home/vagrant/results"
   config.vm.network "private_network", ip: "192.168.33.12"
 
   #########################################################################

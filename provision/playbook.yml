@@ -41,7 +41,17 @@
         name: g++
         state: present
 
-    - name: Install package "libasound2-dev"
+    - name: Install package "git"
+      apt:
+        name: git
+        state: present
+
+    - name: Install package "swig"
+      apt:
+        name: swig
+        state: present
+
+	- name: Install package "libasound2-dev"
       apt:
         name: libasound2-dev
         state: present
