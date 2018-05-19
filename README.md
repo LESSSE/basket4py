@@ -1,8 +1,8 @@
-magenta-machine
+Music-Cage-Machine
 =================
 
-## magenta-machine is an infrastructure project
-Simply add use magenta-machine to create a simple virtual machine ready to use [magenta](https://github.com/tensorflow/magenta). Developed from [basket4py](https://github.com/rreben/basket4py) it is provided using ansible. Jupyter notebooks from a virtual vagrant enabled development environment
+## Music-Cage-Machine is an infrastructure project
+Use Music-Cage-Machine to create a simple virtual machine ready to develop and use music related techonology and deep learning, for example [magenta](https://github.com/tensorflow/magenta). Developed from [basket4py](https://github.com/rreben/basket4py) it is provisioned using ansible. Jupyter notebooks from a virtual vagrant enabled development environment.
 
 ## A python environment with anaconda and vagrant
 This project gives you an easy start with python:
