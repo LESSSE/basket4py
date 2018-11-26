@@ -64,7 +64,7 @@
 
     - name: Install python library through pip requirements
       pip:
-        requirements: /home/vagrant/notebooks/requirements.txt
+        requirements: /home/vagrant/requirements.txt
         executable: /usr/local/anaconda/bin/pip
 
     - name: install python library via conda
