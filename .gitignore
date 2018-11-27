@@ -1,8 +1,4 @@
 .vagrant/
-provision/*.retry
-provision/roles/andrewrothstein.anaconda
-provision/roles/andrewrothstein.bash
-provision/roles/andrewrothstein.unarchive-deps
 .DS_Store
 Thumbs.db
 *.pyc
@@ -13,3 +9,4 @@ vagrant/.vagrant/
 twitter.oauth_access
 Berksfile.lock
 ._*
+notebooks/*

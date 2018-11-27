@@ -1,0 +1,36 @@
+---
+galaxy_info:
+  author: Andrew Rothstein
+  description: installs Anaconda
+  company: BlackRock
+  license:
+    - MIT
+  min_ansible_version: 2.0
+  platforms:
+    - name: EL
+      versions:
+        - all
+    - name: Fedora
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - all
+    - name: Archlinux
+      versions:
+        - all
+  galaxy_tags:
+    - python
+    - conda
+    - anaconda
+
+dependencies:
+  - src: bash
+    version: v1.1.1
+    when: ansible_os_family != 'Windows'
+  - src: unarchive-deps
+    version: v1.0.10
+    when: ansible_os_family != 'Windows'

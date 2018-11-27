@@ -1,3 +1,4 @@
+---
 - hosts: all
   become: true
 
@@ -5,9 +6,13 @@
     - anaconda_make_sys_default: True
 
   roles:
-    - andrewrothstein.anaconda
+    - anaconda
 
   post_tasks:
+
+    - name: import role
+      import_role:
+        name: anaconda 
 
     - name: Create jupyter notebook configuration directory
       file:
@@ -51,7 +56,7 @@
         name: swig
         state: present
 
-	- name: Install package "libasound2-dev"
+    - name: Install package "libasound2-dev"
       apt:
         name: libasound2-dev
         state: present
@@ -64,10 +69,11 @@
 
     - name: Install python library through pip requirements
       pip:
-        requirements: /home/vagrant/requirements.txt
+        requirements: /home/vagrant/provision/requirements.txt
         executable: /usr/local/anaconda/bin/pip
 
     - name: install python library via conda
       conda: name={{ item }} state=latest executable="/usr/local/anaconda/bin/conda"
       with_items:
        - snuggs
+

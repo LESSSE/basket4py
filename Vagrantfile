@@ -28,6 +28,7 @@ Vagrant.configure("2") do |config|
   config.vm.synced_folder "notebooks/", "/home/vagrant/notebooks"
   config.vm.synced_folder "corpora/", "/home/vagrant/corpora"
   config.vm.synced_folder "results/", "/home/vagrant/results"
+  config.vm.synced_folder "provision/", "/home/vagrant/provision"
   config.vm.network "private_network", ip: "192.168.33.12"
 
   #########################################################################
@@ -38,8 +39,10 @@ Vagrant.configure("2") do |config|
     # You can increase the default amount of memory used by your VM by
     # adjusting this value below (in MB) and reprovisioning.
     vb.customize ["modifyvm", :id, "--memory", "1024"]
-    vb.name = "magenta_machine"
+    vb.name = "jupyter_machine"
   end
+
+  config.vm.provision :shell, path: "provision/bootstrap.sh"
 
   # Ansible provisioning - 
   # this will run ansible on the VM so its not necessary to install on the host
@@ -48,8 +51,10 @@ Vagrant.configure("2") do |config|
     ansible.install_mode = "default"
     #ansible.version = "latest"
     ansible.verbose = "true"
-    ansible.galaxy_role_file = "provision/requirements.yml"
+    #ansible.galaxy_role_file = "provision/requirements.yml"
     ansible.raw_arguments = ["--module-path", "/vagrant/provision/library/ansible-conda"]
   end
+
+  config.vm.provision :shell, path: "provision/lib_setup.sh"
 
 end
