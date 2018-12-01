@@ -38,8 +38,8 @@ Vagrant.configure("2") do |config|
   config.vm.provider :virtualbox do |vb, override|
     # You can increase the default amount of memory used by your VM by
     # adjusting this value below (in MB) and reprovisioning.
-    vb.customize ["modifyvm", :id, "--memory", "1024"]
-    vb.name = "jupyter_music_machine"
+    vb.customize ["modifyvm", :id, "--memory", "2052"]
+    vb.name = "jupyter_machine_1"
   end
 
   config.vm.provision :shell, path: "provision/bootstrap.sh"

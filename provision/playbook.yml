@@ -61,11 +61,26 @@
         name: libasound2-dev
         state: present
 
+    - name: Install package "fluidsynth"
+      apt:
+        name: fluidsynth
+        state: latest
+
+    - name: Install package "libjack-dev"
+      apt:
+        name: libjack-dev
+        state: latest
+
     - name: Enable and start jupyter notebook service
       service:
         name: jupyter-notebook
         enabled: yes
         state: started
+
+    - name: Update pip
+      command: /usr/local/Anaconda3-5.1.0-Linux-x86_64/bin/pip install --upgrade pip
+      args:
+        chdir: /usr/local/Anaconda3-5.1.0-Linux-x86_64/bin/
 
     - name: Install python library through pip requirements
       pip:
@@ -76,4 +91,3 @@
       conda: name={{ item }} state=latest executable="/usr/local/anaconda/bin/conda"
       with_items:
        - snuggs
-
