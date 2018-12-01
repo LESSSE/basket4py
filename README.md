@@ -30,3 +30,9 @@ Follow these simple steps to install everything you need to start programming:
 * Use a terminal (dos-prompt / cmd) and navigate to the folder that contains the extracted files. You should find a file named `vagrantfile`.
 * type in `vagrant up`. This command will prepare a "virtual computer" on your pc or mac. Everything will be installed within this "virtual computer" so there won't be any interferences with other programs on your mashine.
 * type in `vagrant provision` this command may take even longer (leave it for the night). It will install a modern python development environment.
+
+## What does it already include?
+Most of the midi libraries for python and magenta models
+
+
+
